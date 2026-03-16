@@ -13,9 +13,3 @@ rustflags = [
 
 [build]
 target = "thumbv7m-none-eabi"    # Cortex-M3
-
-[alias]
-# `cargo rb foo` will expand to `cargo run --bin foo`
-rb = "run --bin"
-# `cargo rrb foo` will expand to `cargo run --release --bin foo`
-rrb = "run --release --bin"

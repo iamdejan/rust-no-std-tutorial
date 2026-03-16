@@ -4,6 +4,17 @@ name = "rust-no-std-tutorial"
 edition = "2024"
 version = "0.1.0"
 
+[lints.rust]
+warnings = "warn"
+dead-code = "warn"
+
+[lints.clippy]
+needless_return = "allow"
+implicit_return = "forbid"
+pedantic = { level = "deny", priority = -1 }
+print_stdout = "allow"
+trivially_copy_pass_by_ref = "allow"
+
 [[bin]]
 name = "main"
 test = false
@@ -26,24 +37,3 @@ semihosting = "0.1.20"
 
 [dev-dependencies]
 defmt-test = "0.3"
-
-# cargo build/run
-[profile.dev]
-# default is opt-level = '0', but that makes very
-# verbose machine code
-opt-level = 's'
-# trade compile speed for slightly better optimisations
-codegen-units = 1
-
-# cargo build/run --release
-[profile.release]
-# default is opt-level = '3', but that makes quite
-# verbose machine code
-opt-level = 's'
-# trade compile speed for slightly better optimisations
-codegen-units = 1
-# Use Link Time Optimisations to further inline things across
-# crates
-lto = 'fat'
-# Leave the debug symbols in (default is no debug info)
-debug = 2

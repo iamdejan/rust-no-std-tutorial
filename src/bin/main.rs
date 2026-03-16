@@ -1,8 +1,8 @@
 #![no_main]
 #![no_std]
 
-use rust_no_std_tutorial as _; // global logger + panicking-behavior + memory layout
-use defmt::Format; // <- derive attribute
+use defmt::Format;
+use rust_no_std_tutorial as _; // global logger + panicking-behavior + memory layout // <- derive attribute
 
 #[derive(Format)]
 struct S1<T> {
