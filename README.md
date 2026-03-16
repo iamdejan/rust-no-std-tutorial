@@ -31,6 +31,7 @@ Before running this program, ensure you have the following installed:
    ```
 
 4. **qemu-run** - Runs `qemu-system-arm` but decodes `defmt` data sent to [semihosting](https://doc.rust-lang.org/nightly/embedded-book/start/semihosting.html). Install it using:
+
    **Cargo:**
    ```bash
    cargo install qemu-run
